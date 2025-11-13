@@ -1,0 +1,287 @@
+.chatsection {
+    background: linear-gradient(135deg, var(--background-color) 60%, var(--chat-bubble-ai) 100%);
+    height: 100dvh;
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.topsection {
+    width: 100%;
+    flex: 1 1 0;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.topsection::-webkit-scrollbar {
+    width: 6px;
+}
+
+.topsection::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+.topsection::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.timestamp {
+    display: block;
+    font-size: 12px;
+    color: #b0b8c1;
+    margin-top: 6px;
+    margin-left: 2px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    opacity: 0.8;
+}
+
+.bottomsection {
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--chat-bubble-ai) 60%, var(--background-color) 100%);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 12px 0 rgba(44, 62, 80, 0.08);
+}
+
+.headings {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.7em;
+    margin: 0;
+}
+
+.headings span:nth-child(1) {
+    font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    background: #1397DC;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.2em;
+    line-height: 1.1;
+}
+
+.headings span:nth-child(2) {
+    font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
+    font-size: clamp(1.2rem, 3vw, 2.2rem);
+    font-weight: 600;
+    color: var(--color);
+    margin-bottom: 0.1em;
+    line-height: 1.2;
+}
+
+.headings span:nth-child(3) {
+    font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    color: #6B7685;
+    margin-top: 0.2em;
+    line-height: 1.3;
+}
+
+.bottomsection input {
+    width: 60%;
+    height: 60px;
+    padding: 20px 24px;
+    font-size: 17px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 30px;
+    outline: none;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+    box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.08);
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.bottomsection input:focus {
+    border-color: var(--color);
+    box-shadow: 0 0 0 2px rgba(57, 125, 196, 0.13);
+    background-color: var(--chat-bubble-ai);
+}
+
+#sendbtn {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--btn-background-color);
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(57, 125, 196, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+#sendbtn:hover {
+    background-color: var(--hover-btn-background-color);
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 6px 18px rgba(57, 125, 196, 0.13);
+}
+
+#sendbtn svg {
+    width: 24px;
+    height: 24px;
+    color: var(--btn-color);
+}
+
+.userbox {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding: 18px 22px;
+    background: var(--chat-bubble-user);
+    border-radius: 18px;
+    max-width: 80%;
+    margin-left: auto;
+    box-shadow: 0 4px 18px 0 rgba(57, 125, 196, 0.10);
+    animation: bubbleIn 0.3s cubic-bezier(.4,2,.6,1) both;
+}
+
+.userbox p {
+    color: var(--btn-color);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.aibox {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding: 18px 22px;
+    background: var(--chat-bubble-ai);
+    border-radius: 18px;
+    max-width: 80%;
+    box-shadow: 0 4px 18px 0 rgba(44, 62, 80, 0.10);
+    animation: bubbleIn 0.3s cubic-bezier(.4,2,.6,1) both;
+}
+
+.aibox p {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.aibox p::-webkit-scrollbar {
+    width: 4px;
+}
+
+.aibox p::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.aibox p::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+}
+
+/* Error message styling */
+.aibox p:has(svg), .aibox p.error {
+    color: #ff5c5c !important;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.whitespace-pre-line {
+    white-space: pre-line;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.result img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.10);
+}
+
+.loader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.loader hr {
+    height: 8px;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient(to right, var(--color), var(--background-color));
+    background-size: 200% 100%;
+    animation: loader 1.5s ease-in-out infinite;
+}
+
+@keyframes loader {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes bubbleIn {
+    0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 800px) {
+    .headings {
+        font-size: 1.1rem;
+        padding: 10px;
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .bottomsection input {
+        width: 70%;
+    }
+    
+    .userbox, .aibox {
+        max-width: 90%;
+    }
+}

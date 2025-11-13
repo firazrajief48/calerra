@@ -1,0 +1,7 @@
+.separation {
+    width: 1px;
+    height: 100dvh;
+    background-color: var(--border-color);
+    opacity: 0.5;
+    margin: 0;
+}

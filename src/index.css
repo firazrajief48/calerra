@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
+}
+
+html {
+  font-size: 16px;
+  background: var(--background-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  background: var(--background-color);
+  transition: background 0.3s;
+}
+
+:root {
+  --primary: #1397DC;
+  --primary-hover: #0e7ab6;
+  --soft-red: #FF6B81;
+  --soft-red-bg: #FFF0F3;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2.5rem;
+  --shadow: 0 4px 24px 0 rgba(19,151,220,0.09);
+  --transition: 0.2s cubic-bezier(.4,2,.6,1);
+  --sidebar-width: 320px;
+  --sidebar-padding: 2rem;
+  --surface: #fff;
+  --surface-alt: #F1F6FA;
+  --border-color: #E3EAF2;
+}
+
+.lightmode {
+  --color: #1A2330;
+  --background-color: #F8FBFF;
+  --surface: #fff;
+  --surface-alt: #F1F6FA;
+  --btn-background-color: var(--primary);
+  --btn-color: #fff;
+  --hover-btn-background-color: var(--primary-hover);
+  --chat-bubble-user: var(--primary);
+  --chat-bubble-ai: #E9F3FA;
+  --text-color: #1A2330;
+  --border-color: #E3EAF2;
+  --shadow: 0 4px 24px 0 rgba(19,151,220,0.09);
+}
+
+.darkmode {
+  --color: #F8FBFF;
+  --background-color: #1E2B3A;
+  --surface: #23243A;
+  --surface-alt: #1C1C1C;
+  --btn-background-color: var(--primary);
+  --btn-color: #fff;
+  --hover-btn-background-color: var(--primary-hover);
+  --chat-bubble-user: var(--primary);
+  --chat-bubble-ai: #23243A;
+  --text-color: #F8FBFF;
+  --border-color: #23243A;
+  --shadow: 0 4px 24px 0 rgba(19,151,220,0.13);
+}
+
+button, .btn, input, .input, .sidebar .recent, .sidebar .newchat, .clear-history-btn {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-xl);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--surface);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow);
+  padding: var(--sidebar-padding) 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 1rem 2rem 2rem;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+@media (max-width:900px) {
+  .sidebar {
+    margin: 1rem 0.5rem;
+    padding: 1.2rem 0.5rem;
+    width: 100vw;
+    border-radius: var(--radius-xl);
+  }
+}
+
+@media (max-width:600px) {
+  .sidebar {
+    margin: 0;
+    border-radius: 0;
+    width: 100vw;
+    min-width: unset;
+  }
+  .separation {
+    display: none;
+  }
+}
